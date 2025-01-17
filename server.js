@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 // MySQL Connection
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: '10.1.10.30',
     user: 'root',        // Replace with your MySQL username
     password: 'Flutter@2025',        // Replace with your MySQL password
     database: 'fluttermonks'   // Replace with your database name
