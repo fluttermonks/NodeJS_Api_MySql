@@ -1,19 +1,20 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
 
 // MySQL Connection
 const db = mysql.createConnection({
-    host: '10.1.10.30',
-    user: 'root',        // Replace with your MySQL username
-    password: 'Flutter@2025',        // Replace with your MySQL password
-    database: 'fluttermonks'   // Replace with your database name
+    host: process.env.DB_HOST,        // Replace with your MySQL host
+    user: process.env.DB_USER,        // Replace with your MySQL username
+    password: process.env.DB_PASSWORD,        // Replace with your MySQL password
+    database: process.env.DB_NAME   // Replace with your database name
 });
 
 // Connect to MySQL
